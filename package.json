@@ -1,0 +1,16 @@
+{
+  "name": "wikipedia_table_download",
+  "version": "1.0.0",
+  "description": "Download table data from wikipedia and return JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "author": "oomilekh",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "cheerio-tableparser": "^1.0.1",
+    "when": "^3.7.8"
+  }
+}
