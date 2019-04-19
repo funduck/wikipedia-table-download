@@ -64,10 +64,10 @@ const parsedTableToJson = (cols) => {
     return rows;
 }
 
-const main = (article) => {
-    const url = `https://en.wikipedia.org/wiki/${article}`;
+const main = (url, article) => {
+    url = url || 'https://en.wikipedia.org/wiki/';
 
-    return getHTML(url)
+    return getHTML(`${url}${article || ''}`)
     .then((doc) => {
         //console.log('downloaded HTML, building jQuery')
         //console.log(doc)
@@ -101,6 +101,6 @@ const main = (article) => {
 module.exports = main;
 
 if (process.argv[1] == module.filename) {
-    main(process.argv[2] || 'List_of_mobile_telephone_prefixes_by_country')
+    main(process.argv[2] || 'https://en.wikipedia.org/wiki/List_of_mobile_telephone_prefixes_by_country')
     .then((res) => {console.log(JSON.stringify(res, null, '  '))});
 }
